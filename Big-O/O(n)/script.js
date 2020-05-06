@@ -24,3 +24,19 @@ function findNemo1(array) {
 findNemo1(large);
 
 // O(n) --> Linear Time
+
+const findNemo2 = (array) => {
+  array.forEach((item) => {
+    if (i === 'nemo') {
+      console.log('Found NEMO!');
+    }
+  });
+};
+
+const findNemo3 = (array) => {
+  for (let item of array) {
+    if (i === 'nemo') {
+      console.log('Found NEMO!');
+    }
+  }
+};
