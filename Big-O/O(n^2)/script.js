@@ -25,3 +25,5 @@ function printAllNumbersThenAllPairSums(numbers) {
 }
 
 printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]);
+
+// Quadratic time O(n^2)
