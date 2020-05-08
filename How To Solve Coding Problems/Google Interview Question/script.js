@@ -25,15 +25,15 @@ function hasPairWithSum(arr, sum) {
 
 function hasPairWithSum2(arr, sum) {
   const mySet = new Set();
-  let found = false;
-  arr.forEach((item) => {
+  let found = arr.some((item) => {
     if (mySet.has(item)) {
-      found = true;
-      return;
+      return true;
     }
 
     mySet.add(sum - item);
+    return false;
   });
+
   return found;
 }
 

@@ -13,13 +13,13 @@ const array1 = ['a', 'b', 'c', 'x'];
 const array2 = ['z', 'y', 'x'];
 
 function containsCommonItem(array1, array2) {
-  let found = false;
-  array1.forEach((item) => {
-    array2.forEach((item2) => {
+  let found = array1.some((item) => {
+    return array2.some((item2) => {
       if (item === item2) {
-        found = true;
-        return;
+        return true;
       }
+
+      return false;
     });
   });
 
@@ -50,12 +50,11 @@ function containsCommonItem2(arr1, arr2) {
   });
 
   // loop through second array and check if item in second array exists on create obejct
-  let found = false;
-  arr2.forEach((item2) => {
+  let found = arr2.some((item2) => {
     if (map[item2]) {
-      found = true;
-      return;
+      return true;
     }
+    return false;
   });
 
   return found;
