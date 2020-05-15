@@ -49,10 +49,25 @@ class HashTable {
     this.data[address].push([key, value]);
     return this.data;
   }
+
+  keys() {
+    const keysArray = [];
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        // [[['key', 'value']]]
+        keysArray.push(this.data[i][0][0]);
+      }
+    }
+
+    return keysArray;
+  }
 }
 
 const myHashTable = new HashTable(50);
 myHashTable.set('grapes', 10000);
-console.log(myHashTable.get('grapes'));
+// console.log(myHashTable.get('grapes'));
 myHashTable.set('apples', 9);
-console.log(myHashTable.get('apples'));
+myHashTable.set('oranges', 2);
+console.log(myHashTable.keys());
+// console.log(myHashTable.get('apples'));
